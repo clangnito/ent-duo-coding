@@ -63,6 +63,8 @@ import { ChatService } from './shared/services/chat/chat.service';
 import { LoggerService } from './shared/services/logger/logger.service';
 import { NotificationService } from './shared/services/notifications/notification.service';
 import { StorageService } from './shared/services/storage/storage.service';
+import { HomeDuoCodingComponent } from './home-duo-coding/home-duo-coding.component';
+import { HomeEnterRoomComponent } from './home-enter-room/home-enter-room.component';
 
 @NgModule({
 	declarations: [
@@ -87,7 +89,9 @@ import { StorageService } from './shared/services/storage/storage.service';
 		HasLayoutSpeakingPipe,
 		HasExitPipe,
 		TooltipListPipe,
-		FooterComponent
+		FooterComponent,
+		HomeDuoCodingComponent,
+		HomeEnterRoomComponent
 	],
 	imports: [
 		FormsModule,
