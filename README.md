@@ -21,23 +21,20 @@ le lien de openvidu https://docs.openvidu.io/en/2.14.0/demos/openvidu-call/
 
 3) Execute OpenVidu platform
 
-If you are using Docker Toolbox on Windows, read this FAQ to properly execute OpenVidu development container and how to adapt these instructions.
-
-OpenVidu Platform must be up and running. The easiest way is running this OpenVidu development container (you will need Docker CE):
-
-# WARNING: this container is not suitable for production deployments of OpenVidu Platform
-# Visit https://docs.openvidu.io/en/stable/deployment
-
 docker run -p 4443:4443 --rm -e OPENVIDU_SECRET=MY_SECRET openvidu/openvidu-server-kms:2.14.0
+
 4) Install NPM dependencies of NodeJS backend:
 
 npm install --prefix openvidu-call-back
+
 5) Start OpenVidu Call backend. To configure this command you can check the section below.
 
 npm run start --prefix openvidu-call-back
+
 6) Install NPM dependencies of Angular frontend. Open another terminal to run the following command:
 
 npm install --prefix openvidu-call-front
+
 7) Finally, start OpenVidu Call frontend
 
 cd openvidu-call-front
