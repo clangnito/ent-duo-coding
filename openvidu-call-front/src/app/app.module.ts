@@ -65,6 +65,7 @@ import { NotificationService } from './shared/services/notifications/notificatio
 import { StorageService } from './shared/services/storage/storage.service';
 import { HomeDuoCodingComponent } from './home-duo-coding/home-duo-coding.component';
 import { HomeEnterRoomComponent } from './home-enter-room/home-enter-room.component';
+import { MyeditorComponent } from './myeditor/myeditor.component';
 
 @NgModule({
 	declarations: [
@@ -91,7 +92,8 @@ import { HomeEnterRoomComponent } from './home-enter-room/home-enter-room.compon
 		TooltipListPipe,
 		FooterComponent,
 		HomeDuoCodingComponent,
-		HomeEnterRoomComponent
+		HomeEnterRoomComponent,
+		MyeditorComponent
 	],
 	imports: [
 		FormsModule,

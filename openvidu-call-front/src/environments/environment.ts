@@ -5,7 +5,8 @@
 export const environment = {
   production: false,
   openvidu_url: '',
-  openvidu_secret: ''
+  openvidu_secret: '',
+  CONVERGENCE_URL : 'http://localhost:8000/api/realtime/convergence/default'
 };
 
 /*
