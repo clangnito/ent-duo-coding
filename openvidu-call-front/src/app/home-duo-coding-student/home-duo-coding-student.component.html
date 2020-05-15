@@ -31,14 +31,14 @@
       </div>
 
       <!-- Nav Item - Pages Collapse Menu -->
-      <div  *ngFor="let listeEtudiant of listeEtudiants">
+      <!-- <div  *ngFor="let listeEtudiant of listeEtudiants">
         <li class="nav-item">
           <a class="nav-link collapsed" href="#">
             <i class="fas fa-fw fa-user"></i>
             <span>{{listeEtudiant.name}}</span>
           </a>
         </li>
-      </div>
+      </div> -->
       
 
        
@@ -203,7 +203,7 @@
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><strong> Professeur :  </strong> Olivier Barais</span>
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><strong> Professeur :  </strong> {{nomEtudiant}}</span>
                 <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
               </a>
               <!-- Dropdown - User Information -->
@@ -238,7 +238,7 @@
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Live coding de : Constant LANGNITO</h1>
+            <h1 class="h3 mb-0 text-gray-800">Live coding de : {{nomEtudiant}}</h1>
             <!-- <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
           </div>
 
@@ -254,7 +254,7 @@
               <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary">Coding </h6>
+                  <h6 class="m-0 font-weight-bold text-primary">My Coding </h6>
                   <!-- <div class="dropdown no-arrow">
                     <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>

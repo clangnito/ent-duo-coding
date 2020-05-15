@@ -65,6 +65,8 @@ import { NotificationService } from './shared/services/notifications/notificatio
 import { StorageService } from './shared/services/storage/storage.service';
 import { HomeDuoCodingComponent } from './home-duo-coding/home-duo-coding.component';
 import { HomeEnterRoomComponent } from './home-enter-room/home-enter-room.component';
+import { HomeChoiseProfileComponent } from './home-choise-profile/home-choise-profile.component';
+import { HomeDuoCodingStudentComponent } from './home-duo-coding-student/home-duo-coding-student.component';
 
 @NgModule({
 	declarations: [
@@ -91,7 +93,9 @@ import { HomeEnterRoomComponent } from './home-enter-room/home-enter-room.compon
 		TooltipListPipe,
 		FooterComponent,
 		HomeDuoCodingComponent,
-		HomeEnterRoomComponent
+		HomeEnterRoomComponent,
+		HomeChoiseProfileComponent,
+		HomeDuoCodingStudentComponent
 	],
 	imports: [
 		FormsModule,

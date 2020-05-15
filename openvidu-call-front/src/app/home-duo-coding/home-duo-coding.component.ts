@@ -15,12 +15,12 @@ export class HomeDuoCodingComponent implements OnInit {
   public roomForm: FormControl;
   public version = require('../../../package.json').version;
   
-  products = [
-    {"id":1,"name":"LANGNITO Constant "},
-    {"id":2,"name":"WOLOU Mickael"},
-    {"id":3,"name":"SIMON Irina"},
-    {"id":4,"name":"LAFONT Jeremy"},
-    {"id":5,"name":"SCRIMALI Gaetan"}
+  listeEtudiants = [
+    {"id":18013178,"name":"LANGNITO Constant "},
+    {"id":14013178,"name":"WOLOU Mickael"},
+    {"id":15013138,"name":"SIMON Irina"},
+    {"id":15013178,"name":"LAFONT Jeremy"},
+    {"id":16013178,"name":"SCRIMALI Gaetan"}
 ];
   constructor(private router: Router, public formBuilder: FormBuilder) { }
 
