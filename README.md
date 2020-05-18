@@ -39,3 +39,7 @@ npm install --prefix openvidu-call-front
 
 cd openvidu-call-front
 npx ng serve --open
+
+8) Convergence 
+
+docker run -p "8000:80" --name convergence convergencelabs/convergence-omnibus
