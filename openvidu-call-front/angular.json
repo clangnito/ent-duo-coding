@@ -21,17 +21,39 @@
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "**/*",
+                "input": "./node_modules/monaco-editor/min/vs",
+                "output": "/vs/"
+              },
+              {
+                "glob": "convergence.amd.js",
+                "input": "./node_modules/@convergence/convergence/",
+                "output": "/"
+              },
+              {
+                "glob": "color-assigner.js",
+                "input": "./node_modules/@convergence/color-assigner/umd/",
+                "output": "/"
+              }
             ],
             "styles": [
               "src/styles.css",
-              "src/theme.scss"
+              "src/theme.scss",
+              "node_modules/@convergencelabs/monaco-collab-ext/css/monaco-collab-ext.css"
             ],
             "scripts": [
               "./node_modules/jquery/dist/jquery.min.js",
               {
                 "input": "node_modules/document-register-element/build/document-register-element.js"
-              }
+              },
+              "node_modules/monaco-editor/min/vs/loader.js",
+              "node_modules/monaco-editor/min/vs/editor/editor.main.nls.js",
+              "node_modules/monaco-editor/min/vs/editor/editor.main.js",
+              "node_modules/@convergencelabs/monaco-collab-ext/umd/monaco-collab-ext.js",
+              "node_modules/@convergence/color-assigner/umd/color-assigner.js",
+              "src/monaco-adapter.js"
             ]
           },
           "configurations": {

@@ -67,6 +67,7 @@ import { HomeDuoCodingComponent } from './home-duo-coding/home-duo-coding.compon
 import { HomeEnterRoomComponent } from './home-enter-room/home-enter-room.component';
 import { HomeChoiseProfileComponent } from './home-choise-profile/home-choise-profile.component';
 import { HomeDuoCodingStudentComponent } from './home-duo-coding-student/home-duo-coding-student.component';
+import { MyeditorComponent } from './myeditor/myeditor.component';
 
 @NgModule({
 	declarations: [
@@ -95,7 +96,8 @@ import { HomeDuoCodingStudentComponent } from './home-duo-coding-student/home-du
 		HomeDuoCodingComponent,
 		HomeEnterRoomComponent,
 		HomeChoiseProfileComponent,
-		HomeDuoCodingStudentComponent
+		HomeDuoCodingStudentComponent,
+		MyeditorComponent
 	],
 	imports: [
 		FormsModule,
