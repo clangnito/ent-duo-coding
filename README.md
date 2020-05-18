@@ -35,11 +35,14 @@ npm run start --prefix openvidu-call-back
 
 npm install --prefix openvidu-call-front
 
-7) Finally, start OpenVidu Call frontend
-
-cd openvidu-call-front
-npx ng serve --open
-
-8) Convergence 
+7) Convergence 
 
 docker run -p "8000:80" --name convergence convergencelabs/convergence-omnibus
+
+8) Finally, start OpenVidu Call frontend
+
+cd openvidu-call-front
+    
+npx ng serve --open
+
+
