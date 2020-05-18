@@ -21,7 +21,7 @@ le lien de openvidu https://docs.openvidu.io/en/2.14.0/demos/openvidu-call/
 
 3) Execute OpenVidu platform
 
-docker run -p 4443:4443 --rm -e OPENVIDU_SECRET=MY_SECRET openvidu/openvidu-server-kms:2.14.0
+sudo docker run -p 4443:4443 --rm -e OPENVIDU_SECRET=MY_SECRET openvidu/openvidu-server-kms:2.14.0
 
 4) Install NPM dependencies of NodeJS backend:
 
@@ -37,7 +37,7 @@ npm install --prefix openvidu-call-front
 
 7) Convergence 
 
-docker run -p "8000:80" --name convergence convergencelabs/convergence-omnibus
+sudo docker run -p "8000:80" --name convergence convergencelabs/convergence-omnibus
 
 8) Finally, start OpenVidu Call frontend
 
