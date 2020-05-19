@@ -15,9 +15,13 @@
                                 <div class="text-center">
                                     <h1 class="h4 text-gray-900 mb-4">Enseignant</h1>
                                 </div>
-                                <a href="/#/home-enseignant" class="btn btn-success btn-user btn-block">
-                                    Olivier Barais
-                                </a>
+                                <div *ngFor="let listeEnseignat of listeEnseignats">
+                                    <a href="/#/home-coding/enseignant/{{listeEnseignat.id}}"
+                                        class="btn btn-success btn-user btn-block">
+                                        {{listeEnseignat.name}}
+                                    </a>
+                                    <br />
+                                </div>
                             </div>
                         </div>
                         <div class="col-lg-6">
@@ -27,19 +31,20 @@
                                 </div>
 
                                 <div *ngFor="let listeEtudiant of listeEtudiants">
-                                <a  href="/#/home-etudiant/{{listeEtudiant.id}}"
-                                    class="btn btn-primary btn-user btn-block">
-                                    {{listeEtudiant.name}}
-                                </a>
-                                <br/>
-                            </div>
+                                    <a href="/#/home-coding/etudiant/{{listeEtudiant.id}}"
+                                        class="btn btn-primary btn-user btn-block">
+                                        {{listeEtudiant.name}}
+                                    </a>
+                                    <br />
+                                </div>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
+
         </div>
 
     </div>
-
 </div>

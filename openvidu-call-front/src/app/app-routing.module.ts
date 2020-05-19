@@ -11,7 +11,8 @@ import { from } from 'rxjs';
 const routes: Routes = [
 	{ path: 'home-openvidu', component: HomeComponent },
 	{ path: '', component: HomeEnterRoomComponent },
-	{ path: 'home-enseignant', component: HomeDuoCodingComponent },
+	{ path: 'home-coding/enseignant/:id', component: HomeDuoCodingComponent },
+	{ path: 'home-coding/etudiant/:id', component: HomeDuoCodingComponent },
 	{ path: 'home-etudiant/:id', component: HomeDuoCodingStudentComponent },
 	{ path: 'choise-profile', component: HomeChoiseProfileComponent },
 	{ path: ':roomName', component: VideoRoomComponent }

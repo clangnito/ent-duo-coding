@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { GetdataService } from '.././getdata.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-home-choise-profile',
@@ -6,6 +8,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home-choise-profile.component.css']
 })
 export class HomeChoiseProfileComponent implements OnInit {
+
+  listeEnseignats = [
+    {"id":318962,"name":"Olivier Barais"},
+];
 
   listeEtudiants = [
     {"id":18013178,"name":"LANGNITO Constant "},
@@ -18,6 +24,7 @@ export class HomeChoiseProfileComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    //console.log(this.getDataService.getListeEtudiant);
   }
 
 }

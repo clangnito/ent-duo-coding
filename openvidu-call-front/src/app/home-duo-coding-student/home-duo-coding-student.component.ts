@@ -19,6 +19,10 @@ export class HomeDuoCodingStudentComponent implements OnInit {
   public idEtudiant = 121 ;
   public nomEtudiant = "cons" ;
   
+
+  listeEnseignats = [
+    {"id":318962,"name":"Olivier Barais"},
+];
   
   listeEtudiants = [
     {"id":18013178,"name":"LANGNITO Constant "},
@@ -29,14 +33,15 @@ export class HomeDuoCodingStudentComponent implements OnInit {
 ];
   constructor(private router: Router, public formBuilder: FormBuilder,private route: ActivatedRoute) {
     var nom= "";
+    console.log(this.route.snapshot.params);
     var id = this.route.snapshot.params.id;
     this.listeEtudiants.forEach(function (value) {
        if (id == value.id) {
         nom = value.name;
        }
 
-  });
-  this.nomEtudiant = nom;
+    });
+    this.nomEtudiant = nom;
 
    }
 

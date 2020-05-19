@@ -68,6 +68,7 @@ import { HomeEnterRoomComponent } from './home-enter-room/home-enter-room.compon
 import { HomeChoiseProfileComponent } from './home-choise-profile/home-choise-profile.component';
 import { HomeDuoCodingStudentComponent } from './home-duo-coding-student/home-duo-coding-student.component';
 import { MyeditorComponent } from './myeditor/myeditor.component';
+import { GetdataService } from './getdata.service';
 
 @NgModule({
 	declarations: [
@@ -135,7 +136,8 @@ import { MyeditorComponent } from './myeditor/myeditor.component';
 		LoggerService,
 		ChatService,
 		NotificationService,
-		StorageService
+		StorageService,
+		GetdataService
 	],
 	bootstrap: [AppComponent]
 })
