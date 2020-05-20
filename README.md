@@ -29,7 +29,11 @@ npm install --prefix openvidu-call-back
 
 5) Start OpenVidu Call backend. To configure this command you can check the section below.
 
-npm run start --prefix openvidu-call-back
+npm run start --prefix openvidu-call-back 
+
+    en cas ou il y a d'erreur 
+         sudo netstat -ltnp
+         kill PID
 
 6) Install NPM dependencies of Angular frontend. Open another terminal to run the following command:
 
