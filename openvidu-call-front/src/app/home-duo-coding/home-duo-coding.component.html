@@ -33,10 +33,9 @@
       <!-- Nav Item - Pages Collapse Menu -->
       <div *ngIf="isEnseignant">
 
-
       <div  *ngFor="let etudiant of listeEtudiants" >
         <li class="nav-item">
-          <a class="nav-link collapsed" href="#/home-coding/etudiant/{{etudiant.id}}" >
+          <a class="nav-link collapsed" (click)="clickOnStudent(etudiant)" >
             <i class="fas fa-fw fa-user"></i>
             <span>{{etudiant.name}}</span>
           </a>
@@ -301,7 +300,7 @@
                       <form [formGroup]="roomForm" novalidate (ngSubmit)="goToVideoCall()">
                         <div class="joinForm">
                           <input matInput class="inputForm" type="text" [formControl]="roomForm"  autocomplete="off" />
-                          <button type="submit" class="joinButton">Appler étudiant</button>
+                          <button type="submit" class="joinButton">Appeler étudiant</button>
                         </div>
                       </form>
                     </div>
