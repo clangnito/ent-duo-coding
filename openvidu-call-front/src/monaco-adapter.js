@@ -22,7 +22,17 @@ define("MonacoConvergenceAdapter",
           editor: this._monacoEditor,
           onInsert: (index, text) => {
             this._model.insert(index, text)
-          }
+          },
+          onReplace: (index, length, text) => {
+            this._model.model().startBatch();
+            this._model.remove(index, length);
+            this._model.insert(index, text);
+            this._model.model().completeBatch();
+          },
+          onDelete: (index, length) => {
+            this._model.remove(index, length);
+          },
+          remoteSourceId: "convergence"
         });
 
         this._model.events().subscribe(e => {

@@ -19,7 +19,7 @@ export class MyeditorComponent implements OnInit, AfterViewInit {
 		paths: {
 		vs: '/vs',
 		Convergence: '/convergence.amd.js',
-		ConvergenceColorAssigner: '/libs/@convergence/color-assigner/umd/color-assigner.js',
+		ConvergenceColorAssigner: '/color-assigner.js',
 		MonacoConvergenceAdapter: './monaco-adapter.js',
 		rxjs: 'https://unpkg.com/rxjs@6.4.0/bundles/rxjs.umd.js'
 		}
@@ -30,24 +30,15 @@ export class MyeditorComponent implements OnInit, AfterViewInit {
 	const username = 'User-' + Math.round(Math.random() * 10000);
 
 	(window as any).define(
-		'monaco-example',
+		'monaco-example2',
 		['vs/editor/editor.main', 'Convergence', 'MonacoConvergenceAdapter'],
 		(_, Convergence, MonacoConvergenceAdapter) => {
 		//
 		// Create the target editor where events will be played into.
 		//
-		const initialtest = 'ngAfterViewInit(): void {\n' +
-		'\t(window as any).require.config({\n' +
-		'\t\tpaths: {\n' +
-		'\t\tvs: \'/vs\',\n' +
-		'\t\tConvergence: \'/convergence.amd.js\',\n' +
-		'\t\tConvergenceColorAssigner: \'/libs/@convergence/color-assigner/umd/color-assigner.js\',\n' +
-		'\t\tMonacoConvergenceAdapter: \'./monaco-adapter.js\',\n' +
-		'\t\trxjs: \'https://unpkg.com/rxjs@6.4.0/bundles/rxjs.umd.js\'\n' +
-		'\t\t}\n' +
-		'\t});';
+		const defaultEditorContents = 'declare var a = 4+5;';
 		const editor = monaco.editor.create(this.editorRef.nativeElement, {
-			value: initialtest,
+			value: defaultEditorContents,
 			theme: 'vs-dark',
 			language: 'javascript'
 		});
@@ -57,10 +48,10 @@ export class MyeditorComponent implements OnInit, AfterViewInit {
 			const domain: any = d;
 			// Now open the model, creating it using the initial data if it does not exist.
 			return domain.models().openAutoCreate({
-				collection: 'example-monaco',
-				id: 'dfdfdfedfsgd',
+				collection: 'example-monaco2',
+				id: 'Id-11',
 				data: {
-				text: 'var observableProt;'
+				text: defaultEditorContents
 				}
 			});
 			})
