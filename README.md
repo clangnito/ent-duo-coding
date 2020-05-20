@@ -36,9 +36,11 @@ npm run start --prefix openvidu-call-back
 npm install --prefix openvidu-call-front
 
 7) Convergence 
-7.a)Pour une premiere execution du container convergence, 
+
+    7.a)Pour une premiere execution du container convergence, 
 sudo docker run -p "8000:80" --name convergence convergencelabs/convergence-omnibus
-7.b) Pour relancer l'execution du container convergence si la connexion est perdu sur windows
+
+    7.b) Pour relancer l'execution du container convergence si la connexion est perdu sur windows
 docker run  -p "8000:80" convergencelabs/convergence-omnibus
 
 8) Finally, start OpenVidu Call frontend
