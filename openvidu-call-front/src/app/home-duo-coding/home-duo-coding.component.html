@@ -19,7 +19,7 @@
       <li class="nav-item active">
         <a class="nav-link" href="index.html">
           <i class="fas fa-fw fa-home"></i>
-          <span> <strong>Classe : </strong> Master 1 MIage   </span></a>
+          <span> <strong>Classe : </strong> Master 1 Miage   </span></a>
       </li>
 
       <!-- Divider -->
@@ -33,12 +33,12 @@
       <!-- Nav Item - Pages Collapse Menu -->
       <div *ngIf="isEnseignant">
 
-      
-      <div  *ngFor="let listeEtudiant of listeEtudiants" >
+
+      <div  *ngFor="let etudiant of listeEtudiants" >
         <li class="nav-item">
-          <a class="nav-link collapsed" href="#">
+          <a class="nav-link collapsed" href="#/home-coding/etudiant/{{etudiant.id}}" >
             <i class="fas fa-fw fa-user"></i>
-            <span>{{listeEtudiant.name}}</span>
+            <span>{{etudiant.name}}</span>
           </a>
         </li>
       </div>

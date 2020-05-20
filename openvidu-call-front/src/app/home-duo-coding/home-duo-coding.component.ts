@@ -26,20 +26,20 @@ export class HomeDuoCodingComponent implements OnInit {
 ];
 
   listeEtudiants = [
-    { "id": 18013178, "name": "LANGNITO Constant " },
+    { "id": 18013178, "name": "LANGNITO Constant" },
     { "id": 14013178, "name": "WOLOU Mickael" },
     { "id": 15013138, "name": "SIMON Irina" },
     { "id": 15013178, "name": "LAFONT Jeremy" },
     { "id": 16013178, "name": "SCRIMALI Gaetan" }
   ];
 
-  
+
 
   constructor(private router: Router, public formBuilder: FormBuilder, private route: ActivatedRoute) {
     this.url = this.router.url;
     this.idEtudiantSelect = this.route.snapshot.params.id;
     var nom= "";
-   
+
     var id = this.route.snapshot.params.id;
     this.listeEtudiants.forEach(function (value) {
        if (id == value.id) {
@@ -70,7 +70,7 @@ export class HomeDuoCodingComponent implements OnInit {
     //     if (this.idEtudiantSelect == value.id) {
     //      nom = value.name;
     //     }
- 
+
     //  });
     //  this.nameEtudiantSelect = nom;
 
@@ -79,7 +79,7 @@ export class HomeDuoCodingComponent implements OnInit {
       randomName = this.idEtudiantSelect + "-" + this.listeEnseignats[0].id;
 
     }
-   
+
 
     //const randomName = "18083197-31097626";
     //const randomName = uniqueNamesGenerator({ dictionaries: [adjectives, colors, animals], separator: '-', });
