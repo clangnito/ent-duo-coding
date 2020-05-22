@@ -69,6 +69,7 @@ import { HomeChoiseProfileComponent } from './home-choise-profile/home-choise-pr
 import { HomeDuoCodingStudentComponent } from './home-duo-coding-student/home-duo-coding-student.component';
 import { MyeditorComponent } from './myeditor/myeditor.component';
 import { GetdataService } from './getdata.service';
+import { TpCreationComponent } from './tp-creation/tp-creation.component';
 
 @NgModule({
 	declarations: [
@@ -98,7 +99,8 @@ import { GetdataService } from './getdata.service';
 		HomeEnterRoomComponent,
 		HomeChoiseProfileComponent,
 		HomeDuoCodingStudentComponent,
-		MyeditorComponent
+		MyeditorComponent,
+		TpCreationComponent
 	],
 	imports: [
 		FormsModule,

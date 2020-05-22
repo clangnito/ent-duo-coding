@@ -15,25 +15,35 @@
                                 <div class="text-center">
                                     <h1 class="h4 text-gray-900 mb-4">Enseignant</h1>
                                 </div>
-                                <div *ngFor="let listeEnseignat of listeEnseignats">
-                                    <a href="/#/home-coding/enseignant/{{listeEnseignat.id}}"
+                                <div *ngFor="let enseignant of listeEnseignats">
+                                    <a href="/#/home-coding/enseignant/{{enseignant.id}}"
                                         class="btn btn-success btn-user btn-block">
-                                        {{listeEnseignat.name}}
+                                        {{enseignant.name}}
                                     </a>
-                                    <br />
+                                    <br/>
                                 </div>
+                              <br>
+                              <br>
+                              <div>
+                                <a href="/#/home-coding/tp-creation/"
+                                   class="btn btn-dark btn-user btn-block">
+                                  Creer un TP
+                                </a>
+                                <br />
+                              </div>
                             </div>
                         </div>
+
                         <div class="col-lg-6">
                             <div class="p-5">
                                 <div class="text-center">
                                     <h1 class="h4 text-gray-900 mb-4">Etudiants</h1>
                                 </div>
 
-                                <div *ngFor="let listeEtudiant of listeEtudiants">
-                                    <a href="/#/home-coding/etudiant/{{listeEtudiant.id}}"
+                                <div *ngFor="let etudiant of listeEtudiants">
+                                    <a href="/#/home-coding/etudiant/{{etudiant.id}}"
                                         class="btn btn-primary btn-user btn-block">
-                                        {{listeEtudiant.name}}
+                                        {{etudiant.name}}
                                     </a>
                                     <br />
                                 </div>
