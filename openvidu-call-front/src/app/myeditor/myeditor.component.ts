@@ -1,7 +1,10 @@
-import { Component, OnInit, AfterViewInit, ElementRef, ViewChild  } from '@angular/core';
+import {Component, OnInit, AfterViewInit, ElementRef, ViewChild, Input} from '@angular/core';
 import {environment} from '../../environments/environment';
+import {Convergence} from '@convergence/convergence';
 
-declare const monaco: any;
+
+ declare const monaco: any;
+
 @Component({
   selector: 'app-myeditor',
   templateUrl: './myeditor.component.html',
@@ -9,12 +12,11 @@ declare const monaco: any;
 })
 export class MyeditorComponent implements OnInit, AfterViewInit {
   @ViewChild('editor') editorRef: ElementRef;
-  constructor() { }
+  username = 'User-' + Math.round(Math.random() * 10000);
 
-  ngOnInit(): void {
-  }
-
-  ngAfterViewInit(): void {
+  defaultEditorContents = 'declare var a = 4+5;';
+  editor: any;
+  constructor() {
 	(window as any).require.config({
 		paths: {
 		vs: '/vs',
@@ -24,47 +26,73 @@ export class MyeditorComponent implements OnInit, AfterViewInit {
 		rxjs: 'https://unpkg.com/rxjs@6.4.0/bundles/rxjs.umd.js'
 		}
 	});
+  }
+
+  ngOnInit(): void {
+  }
+
+  ngAfterViewInit(): void {
 
 	// Connect to the domain.  See ../config.js for the connection settings.
 
-	const username = 'User-' + Math.round(Math.random() * 10000);
-
 	(window as any).define(
 		'monaco-example2',
-		['vs/editor/editor.main', 'Convergence', 'MonacoConvergenceAdapter'],
-		(_, Convergence, MonacoConvergenceAdapter) => {
+		['vs/editor/editor.main', 'MonacoConvergenceAdapter'],
+		(_, MonacoConvergenceAdapter) => {
 		//
 		// Create the target editor where events will be played into.
 		//
-		const defaultEditorContents = 'declare var a = 4+5;';
-		const editor = monaco.editor.create(this.editorRef.nativeElement, {
-			value: defaultEditorContents,
+		this.editor = monaco.editor.create(this.editorRef.nativeElement, {
+			value: this.defaultEditorContents,
 			theme: 'vs-dark',
 			language: 'javascript'
 		});
-
-		Convergence.connectAnonymously(environment.CONVERGENCE_URL, username)
-			.then(d => {
+		Convergence.connectAnonymously(environment.CONVERGENCE_URL, this.username)
+		.then(d => {
 			const domain: any = d;
 			// Now open the model, creating it using the initial data if it does not exist.
 			return domain.models().openAutoCreate({
-				collection: 'example-monaco2',
-				id: 'Id-11',
-				data: {
-				text: defaultEditorContents
-				}
+			collection: 'example-monaco2',
+			id: 'Id-12',
+			data: {
+				text: this.defaultEditorContents
+			}
 			});
-			})
-			.then((model) => {
-			const adapter = new MonacoConvergenceAdapter(editor, model.elementAt('text'));
+		})
+		.then((model) => {
+			const adapter = new MonacoConvergenceAdapter(this.editor, model.elementAt('text'));
 			adapter.bind();
 			// (window as any).exampleLoaded();
-			})
-			.catch(error => {
+		})
+		.catch(error => {
 			console.error('Could not open model ', error);
-			});
 		});
 
+		});
+	  // this.reloadViewContent();
+  }
+  reloadViewContent(): void {/*
+	Convergence.connectAnonymously(environment.CONVERGENCE_URL, this.username)
+		.then(d => {
+		const domain: any = d;
+		// Now open the model, creating it using the initial data if it does not exist.
+		return domain.models().openAutoCreate({
+			collection: 'example-monaco2',
+			id: 'Id-12',
+			data: {
+			text: this.defaultEditorContents
+			}
+		});
+		})
+		.then((model) => {
+		const adapter = new MonacoConvergenceAdapter(this.editor, model.elementAt('text'));
+		adapter.bind();
+		// (window as any).exampleLoaded();
+		})
+		.catch(error => {
+		console.error('Could not open model ', error);
+		});
+	*/
   }
 
 }
