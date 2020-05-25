@@ -17,25 +17,36 @@ export class TpCreationComponent implements OnInit {
   createModel(nomTP: string, contenuTP: string): void {
 
 	const username = 'User-' + Math.round(Math.random() * 10000);
+   const listeEtudiants = [
+		{ 'id': 18013178, 'name': 'LANGNITO Constant' },
+		{ 'id': 14013178, 'name': 'WOLOU Mickael' },
+		{ 'id': 15013138, 'name': 'SIMON Irina' },
+		{ 'id': 15013178, 'name': 'LAFONT Jeremy' },
+		{ 'id': 16013178, 'name': 'SCRIMALI Gaetan' }
+	];
 
 		Convergence.connectAnonymously(environment.CONVERGENCE_URL, username)
 			.then(d => {
 			const domain: any = d;
 			// Now open the model, creating it using the initial data if it does not exist.
-			return domain.models().openAutoCreate({
-		id: 'my-model-id',
-		collection: 'myTP',
-		ephemeral: true,
-		data: {
-			'nomDuTp': nomTP,
-			'contenuTP': contenuTP
-		}
-		})
-		.then((model) => {
-			console.log('model open');
-			// use the model
-		})
+
+		for (let i = 0; i < listeEtudiants.length; i++) {
+		  const idModel = 'User-' + Math.round(Math.random() * 10000);
+			domain.models().openAutoCreate({
+			id: nomTP + '_' + listeEtudiants[i].id,
+			collection: nomTP,
+			ephemeral: true,
+			data: {
+				'nomDuTp': nomTP,
+				'contenuTP': contenuTP
+			}
+			})
+			.then((model) => {
+				console.log('model open');
+				// use the model
+			})
 			.catch((error) => console.log('Could not open the model', error));
+		}
 		});
 
 
