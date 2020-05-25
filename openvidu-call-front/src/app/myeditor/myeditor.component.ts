@@ -11,10 +11,10 @@ export class MyeditorComponent implements OnInit, AfterViewInit {
   @ViewChild('editor') editorRef: ElementRef;
   constructor() { }
 
-  ngOnInit(): void {
+  ngAfterViewInit(): void {
   }
 
-  ngAfterViewInit(): void {
+   ngOnInit(): void {
 	(window as any).require.config({
 		paths: {
 		vs: '/vs',
