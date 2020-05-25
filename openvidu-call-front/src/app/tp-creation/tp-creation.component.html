@@ -31,15 +31,15 @@
       <div class="form-group">
         <br>
         <label for="nomTP">Nom du TP</label>
-        <input type="text" class="form-control" id="nomTP" required>
+        <input #nomTP type="text" class="form-control" id="nomTP" required>
       </div>
 
       <div class="form-group">
         <label for="contenu">Contenu du TP</label>
-        <textarea type="textarea" class="form-control" id="contenu"></textarea>
+        <textarea #contenuTP type="textarea" class="form-control" id="contenu" ></textarea>
       </div>
     <br>
-      <button type="submit" class="btn btn-success"> Ok</button>
+      <button type="submit" class="btn btn-success" (click)="createModel(nomTP.value, contenuTP.value)"> Ok</button>
 
     </form>
   </div>
