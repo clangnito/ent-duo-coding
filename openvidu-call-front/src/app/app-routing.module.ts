@@ -7,6 +7,7 @@ import { HomeEnterRoomComponent } from './home-enter-room/home-enter-room.compon
 import { HomeChoiseProfileComponent } from './home-choise-profile/home-choise-profile.component';
 import { VideoRoomComponent } from './video-room/video-room.component';
 import { from } from 'rxjs';
+import {TpCreationComponent} from "@app/tp-creation/tp-creation.component";
 
 const routes: Routes = [
 	{ path: 'home-openvidu', component: HomeComponent },
@@ -15,7 +16,8 @@ const routes: Routes = [
 	{ path: 'home-coding/etudiant/:id', component: HomeDuoCodingComponent },
 	{ path: 'home-etudiant/:id', component: HomeDuoCodingStudentComponent },
 	{ path: 'choise-profile', component: HomeChoiseProfileComponent },
-	{ path: ':roomName', component: VideoRoomComponent }
+	{ path: ':roomName', component: VideoRoomComponent },
+	{ path: 'home-coding/tp-creation', component: TpCreationComponent }
 
 ];
 
