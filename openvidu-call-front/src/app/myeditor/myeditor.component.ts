@@ -1,5 +1,6 @@
-import {Component, OnInit, AfterViewInit, ElementRef, ViewChild, Input} from '@angular/core';
+import {Component, OnInit, AfterViewInit, ElementRef, ViewChild, Input, SimpleChanges} from '@angular/core';
 import {environment} from '../../environments/environment';
+import {Convergence} from '@convergence/convergence';
 
 declare const monaco: any;
 @Component({
@@ -11,13 +12,15 @@ export class MyeditorComponent implements OnInit, AfterViewInit {
   @Input()
   numeroEtudiant: string;
 
+  topEtudiant: string ;
+
   @ViewChild('editor') editorRef: ElementRef;
   constructor() { }
 
-  ngAfterViewInit(): void {
+  ngOnInit(): void {
   }
 
-   ngOnInit(): void {
+  ngAfterViewInit(): void {
 	(window as any).require.config({
 		paths: {
 		vs: '/vs',
@@ -28,12 +31,12 @@ export class MyeditorComponent implements OnInit, AfterViewInit {
 		}
 	});
 
-	// Connect to the domain .  See ../config.js for the connection settings.
+	// Connect to the domain.  See ../config.js for the connection settings.
 
 	const username = 'User-' + Math.round(Math.random() * 10000);
 
 	(window as any).define(
-		'monaco-example2',
+		'namedefine',
 		['vs/editor/editor.main', 'Convergence', 'MonacoConvergenceAdapter'],
 		(_, Convergence, MonacoConvergenceAdapter) => {
 		//
@@ -41,22 +44,29 @@ export class MyeditorComponent implements OnInit, AfterViewInit {
 		//
 
 
-		const modelId = 'tptest_' + this.numeroEtudiant;
+		const modelId = 'tptest_18013178' ;
 		Convergence.connectAnonymously(environment.CONVERGENCE_URL, username)
 			.then(d => {
 			const domain: any = d;
 			// Now open the model, creating it using the initial data if it does not exist.
-			return domain.models().open(modelId);
+			return domain.models().openAutoCreate({
+				collection: 'tptest',
+				id: modelId,
+				data: {
+				contenuTP: 'default declare var a;'
+				}
+			});
 			})
 			.then((model) => {
+        const defaultEditorContents = 'default declare var a = 4+5;';
         const editor = monaco.editor.create(this.editorRef.nativeElement, {
-          value: model.elementAt("contenuTP").value(),
+          value: defaultEditorContents,
           theme: 'vs-dark',
           language: 'javascript'
         });
+
 			const adapter = new MonacoConvergenceAdapter(editor, model.elementAt('contenuTP'));
 			adapter.bind();
-			// (window as any).exampleLoaded();
 			})
 			.catch(error => {
 			console.error('Could not open model ', error);
