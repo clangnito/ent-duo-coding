@@ -18,16 +18,16 @@ export class HomeDuoCodingStudentComponent implements OnInit {
   public version = require('../../../package.json').version;
   public idEtudiant = 121 ;
   public nomEtudiant = "cons" ;
-  
+
 
   listeEnseignats = [
     {"id":318962,"name":"Olivier Barais"},
 ];
-  
+
   listeEtudiants = [
     {"id":18013178,"name":"LANGNITO Constant "},
     {"id":14013178,"name":"WOLOU Mickael"},
-    {"id":15013138,"name":"SIMON Irina"},
+    {"id":12013178,"name":"SIMON Irina"},
     {"id":15013178,"name":"LAFONT Jeremy"},
     {"id":16013178,"name":"SCRIMALI Gaetan"}
 ];
@@ -53,7 +53,7 @@ export class HomeDuoCodingStudentComponent implements OnInit {
   // });
 		//const randomName = uniqueNamesGenerator({ dictionaries: [adjectives, colors, animals], separator: '-', });
     this.roomForm = new FormControl(randomName, [Validators.minLength(4), Validators.required]);
-    
+
   }
 
 
