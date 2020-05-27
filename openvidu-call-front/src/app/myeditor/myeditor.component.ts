@@ -46,13 +46,7 @@ export class MyeditorComponent implements OnInit, AfterViewInit {
 			.then(d => {
 			const domain: any = d;
 			// Now open the model, creating it using the initial data if it does not exist.
-			return domain.models().openAutoCreate({
-				collection: 'tptest',
-				id: modelId,
-        data: {
-          contenuTP: 'declare default'
-        }
-			});
+			return domain.models().open(modelId);
 			})
 			.then((model) => {
         const editor = monaco.editor.create(this.editorRef.nativeElement, {
