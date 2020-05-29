@@ -24,6 +24,7 @@ import { createCustomElement } from '@angular/elements';
 import { ElementZoneStrategyFactory } from 'elements-zone-strategy';
 import { NgxLinkifyjsModule } from 'ngx-linkifyjs';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 // Pipes
 import { LinkifyPipe } from './shared/pipes/linkfy';
@@ -103,6 +104,7 @@ import { TpCreationComponent } from './tp-creation/tp-creation.component';
 		TpCreationComponent
 	],
 	imports: [
+    NgSelectModule,
 		FormsModule,
 		ReactiveFormsModule,
 		BrowserModule,

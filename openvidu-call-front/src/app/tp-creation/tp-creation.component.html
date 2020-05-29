@@ -43,6 +43,13 @@
         <label>Heure de fin de TP</label>
         <input type="time" class="form-control" id="duree">
       </div>
+
+      <ng-select [items]="listeEtudiants"
+                 bindLabel="name"
+                 placeholder="Select item"
+                 appendTo="body"
+                 multiple="true">
+      </ng-select>
     <br>
       <button type="submit" class="btn btn-success" (click)="createModel(nomTP.value, contenuTP.value)"> Ok</button>
 

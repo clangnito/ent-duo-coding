@@ -8,6 +8,13 @@ import {Convergence} from '@convergence/convergence';
   styleUrls: ['./tp-creation.component.css']
 })
 export class TpCreationComponent implements OnInit {
+   listeEtudiants  = [
+	{ 'id': 18013178, 'name': 'LANGNITO Constant' },
+	{ 'id': 14013178, 'name': 'WOLOU Mickael' },
+	{ 'id': 12013178, 'name': 'SIMON Irina' },
+	{ 'id': 15013178, 'name': 'LAFONT Jeremy' },
+	{ 'id': 16013178, 'name': 'SCRIMALI Gaetan' }
+  ];
 
   constructor() { }
 
@@ -17,23 +24,16 @@ export class TpCreationComponent implements OnInit {
   createModel(nomTP: string, contenuTP: string): void {
 
 	const username = 'User-' + Math.round(Math.random() * 10000);
-   const listeEtudiants = [
-		{ 'id': 18013178, 'name': 'LANGNITO Constant' },
-		{ 'id': 14013178, 'name': 'WOLOU Mickael' },
-		{ 'id': 12013178, 'name': 'SIMON Irina' },
-		{ 'id': 15013178, 'name': 'LAFONT Jeremy' },
-		{ 'id': 16013178, 'name': 'SCRIMALI Gaetan' }
-	];
 
 		Convergence.connectAnonymously(environment.CONVERGENCE_URL, username)
 			.then(d => {
 			const domain: any = d;
 			// Now open the model, creating it using the initial data if it does not exist.
 
-		for (let i = 0; i < listeEtudiants.length; i++) {
+		for (let i = 0; i < this.listeEtudiants.length; i++) {
 		  const idModel = 'User-' + Math.round(Math.random() * 10000);
 			domain.models().openAutoCreate({
-			id: nomTP + '_' + listeEtudiants[i].id,
+			id: nomTP + '_' + this.listeEtudiants[i].id,
 			collection: nomTP,
 			ephemeral: true,
 			data: {
