@@ -7,7 +7,7 @@ import { HomeEnterRoomComponent } from './home-enter-room/home-enter-room.compon
 import { HomeChoiseProfileComponent } from './home-choise-profile/home-choise-profile.component';
 import { VideoRoomComponent } from './video-room/video-room.component';
 import { from } from 'rxjs';
-import {TpCreationComponent} from "@app/tp-creation/tp-creation.component";
+import {TpCreationComponent} from '@app/tp-creation/tp-creation.component';
 
 const routes: Routes = [
 	{ path: 'home-openvidu', component: HomeComponent },
