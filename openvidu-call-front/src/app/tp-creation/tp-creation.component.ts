@@ -20,7 +20,7 @@ export class TpCreationComponent implements OnInit {
    const listeEtudiants = [
 		{ 'id': 18013178, 'name': 'LANGNITO Constant' },
 		{ 'id': 14013178, 'name': 'WOLOU Mickael' },
-		{ 'id': 12013138, 'name': 'SIMON Irina' },
+		{ 'id': 12013178, 'name': 'SIMON Irina' },
 		{ 'id': 15013178, 'name': 'LAFONT Jeremy' },
 		{ 'id': 16013178, 'name': 'SCRIMALI Gaetan' }
 	];
