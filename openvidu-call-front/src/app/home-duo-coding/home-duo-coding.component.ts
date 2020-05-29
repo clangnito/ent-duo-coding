@@ -85,7 +85,7 @@ export class HomeDuoCodingComponent implements OnInit {
   clickOnStudent(etudiant: any) {
 	this.nameEtudiantSelect = etudiant.name;
 	this.idEtudiantSelect = etudiant.id;
-	this.idEtudiantOrProfSelect = 18013178;
+	this.idEtudiantOrProfSelect = etudiant.id;
 	const randomName = etudiant.id + '-' + this.listeEnseignants[0].id;
 	this.roomForm = new FormControl(randomName, [Validators.minLength(4), Validators.required]);
   }

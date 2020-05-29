@@ -26,6 +26,10 @@ export class MyeditorComponent implements OnInit, AfterViewInit {
 
   // tslint:disable-next-line:use-life-cycle-interface
   ngOnChanges(changes: SimpleChanges){
+    this.topEtudiant = '18013178';
+    if (this.isEnseignant && changes['numeroEtudiant'].isFirstChange()){
+      this.numeroEtudiant = this.topEtudiant;
+    }
     this.editor(this.numeroEtudiant);
 
   }
@@ -47,13 +51,13 @@ export class MyeditorComponent implements OnInit, AfterViewInit {
     const username = 'User-' + Math.round(Math.random() * 10000);
 
     (window as any).define(
-      'namedefine',
+      username,
       ['vs/editor/editor.main', 'Convergence', 'MonacoConvergenceAdapter'],
       (_, Convergence, MonacoConvergenceAdapter) => {
         //
         // Create the target editor where events will be played into.
         //
-        if (numeroEtudiant === undefined || this.isEnseignant){
+        if (numeroEtudiant === undefined){
           numeroEtudiant = this.topEtudiant;
         }
 
