@@ -43,26 +43,27 @@ export class MyeditorComponent implements OnInit, AfterViewInit {
 			language: 'javascript'
 		});
 
-		Convergence.connectAnonymously(environment.CONVERGENCE_URL, username)
-			.then(d => {
-			const domain: any = d;
-			// Now open the model, creating it using the initial data if it does not exist.
-			return domain.models().openAutoCreate({
-				collection: 'example-monaco2',
-				id: 'Id-11',
-				data: {
-				text: defaultEditorContents
-				}
-			});
-			})
-			.then((model) => {
-			const adapter = new MonacoConvergenceAdapter(editor, model.elementAt('text'));
-			adapter.bind();
-			// (window as any).exampleLoaded();
-			})
-			.catch(error => {
-			console.error('Could not open model ', error);
-			});
+		// Convergence.connectAnonymously(environment.CONVERGENCE_URL, username)
+		// 	.then(d => {
+		// 	const domain: any = d;
+		// 	// Now open the model, creating it using the initial data if it does not exist.
+		// 	return domain.models().openAutoCreate({
+		// 		collection: 'example-monaco2',
+		// 		id: 'Id-11',
+		// 		data: {
+		// 		text: defaultEditorContents
+		// 		}
+		// 	});
+		// 	}
+		// 	)
+		// 	.then((model) => {
+		// 	const adapter = new MonacoConvergenceAdapter(editor, model.elementAt('text'));
+		// 	adapter.bind();
+		// 	// (window as any).exampleLoaded();
+		// 	})
+		// 	.catch(error => {
+		// 	console.error('Could not open model ', error);
+		// 	});
 		});
 
   }

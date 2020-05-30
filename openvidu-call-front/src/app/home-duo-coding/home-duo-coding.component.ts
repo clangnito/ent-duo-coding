@@ -92,7 +92,8 @@ export class HomeDuoCodingComponent implements OnInit {
     if (this.roomForm.valid) {
       const roomName = this.roomForm.value.replace(/ /g, '-'); // replace white spaces by -
       this.roomForm.setValue(roomName);
-      this.router.navigate(['/', roomName]);
+      window.open('#/'+roomName); 
+      // this.router.navigate(['/', roomName]);
     }
   }
 
