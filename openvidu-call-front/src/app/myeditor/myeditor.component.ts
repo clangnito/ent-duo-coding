@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
 import {MonacoConvergenceAdapter} from '../../MonacoConvergenceAdapter';
 
 
@@ -49,7 +49,7 @@ export class MyeditorComponent implements OnInit, AfterViewInit {
 			.open(currentModelId)
 			.then((model) => {
 			  this.currentModel = model;
-		const value = this.currentModel.elementAt('text').value();
+		const value = this.currentModel.elementAt('contenuTP').value();
 		console.log('model open : Value ===> ', value);
 		if (this.editor) {
 		this.editor.setValue(value);
@@ -61,7 +61,7 @@ export class MyeditorComponent implements OnInit, AfterViewInit {
 			});
 		}
 
-			this.adapter = new MonacoConvergenceAdapter(this.editor, this.currentModel.elementAt('text'));
+			this.adapter = new MonacoConvergenceAdapter(this.editor, this.currentModel.elementAt('contenuTP'));
 			this.adapter.bind();
 			}).catch((error) => {
 			console.log('Could not open the model', error);

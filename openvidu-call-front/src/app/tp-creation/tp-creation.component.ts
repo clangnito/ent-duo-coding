@@ -35,7 +35,6 @@ export class TpCreationComponent implements OnInit {
 			domain.models().openAutoCreate({
 			id: nomTP + '_' + this.listeEtudiants[i].id,
 			collection: nomTP,
-			ephemeral: true,
 			data: {
 				'nomDuTp': nomTP,
 				'contenuTP': contenuTP

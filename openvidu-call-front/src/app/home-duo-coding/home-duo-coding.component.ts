@@ -32,12 +32,12 @@ export class HomeDuoCodingComponent implements OnInit, AfterViewInit {
 	{'id': 318962, 'name': 'Olivier Barais'},
   ];
 
-  listeEtudiants = [
-	{'id': 18013178, 'name': 'LANGNITO Constant'},
-	{'id': 14013178, 'name': 'WOLOU Mickael'},
-	{'id': 15013138, 'name': 'SIMON Irina'},
-	{'id': 15013178, 'name': 'LAFONT Jeremy'},
-	{'id': 16013178, 'name': 'SCRIMALI Gaetan'}
+  listeEtudiants  = [
+	{ 'id': 18013178, 'name': 'LANGNITO Constant' },
+	{ 'id': 14013178, 'name': 'WOLOU Mickael' },
+	{ 'id': 12013178, 'name': 'SIMON Irina' },
+	{ 'id': 15013178, 'name': 'LAFONT Jeremy' },
+	{ 'id': 16013178, 'name': 'SCRIMALI Gaetan' }
   ];
   private idProf: any;
 
@@ -50,12 +50,12 @@ export class HomeDuoCodingComponent implements OnInit, AfterViewInit {
 	let nom = '';
 	const id = this.route.snapshot.params.id;
 	this.listeEtudiants.forEach(function (value) {
-		if (id == value.id) {
+		if (id === value.id) {
 		nom = value.name;
 		}
 	});
 	this.nameEtudiantSelect = nom;
-	this.currentTpId = 'example-monaco2';
+	this.currentTpId = 'tptest';
 
   }
 
@@ -65,7 +65,7 @@ export class HomeDuoCodingComponent implements OnInit, AfterViewInit {
 
 	const re = /enseignant/gi;
 	const re2 = /etudiant/;
-	if (this.url.search(re) != -1) {
+	if (this.url.search(re) !== -1) {
 		this.isEnseignant = true;
 		this.topEtudiant = this.listeEtudiants[0];
 		this.nameEtudiantSelect = this.topEtudiant.name;
@@ -114,7 +114,6 @@ export class HomeDuoCodingComponent implements OnInit, AfterViewInit {
 
 	this.currentModelId = this.currentTpId + '_' + etudiant.id;
 	this.myEditorComponent.reloadViewContent(this.currentDomain, this.currentModelId);
-	//   this.router.navigate(["/#/home-coding/enseignant/318962/1501317815"]);
   }
 
   public goToVideoCall() {
