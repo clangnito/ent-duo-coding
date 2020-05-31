@@ -13,7 +13,7 @@ export class GetdataService {
   listeEtudiants = [
     {"id":18013178,"name":"LANGNITO Constant "},
     {"id":14013178,"name":"WOLOU Mickael"},
-    {"id":15013138,"name":"SIMON Irina"},
+    {"id":12013178,"name":"SIMON Irina"},
     {"id":15013178,"name":"LAFONT Jeremy"},
     {"id":16013178,"name":"SCRIMALI Gaetan"}
 ];
@@ -22,12 +22,12 @@ export class GetdataService {
     this.listeEtudiants = [
       {"id":18013178,"name":"LANGNITO Constant "},
       {"id":14013178,"name":"WOLOU Mickael"},
-      {"id":15013138,"name":"SIMON Irina"},
+      {"id":12013178,"name":"SIMON Irina"},
       {"id":15013178,"name":"LAFONT Jeremy"},
       {"id":16013178,"name":"SCRIMALI Gaetan"}
   ];
 
-  
+
    }
 
   getListeEtudiant() {

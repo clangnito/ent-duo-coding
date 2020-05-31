@@ -18,6 +18,7 @@ export class HomeDuoCodingComponent implements OnInit, AfterViewInit {
   public version = require('../../../package.json').version;
   public url = '';
   public isEnseignant = true;
+  public idEtudiantOrProfSelect;
   public idEtudiantSelect;
   public nameEtudiantSelect;
   public userConnectedId: any;

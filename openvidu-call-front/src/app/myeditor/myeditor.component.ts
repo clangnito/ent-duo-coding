@@ -10,6 +10,14 @@ declare const monaco: any;
   styleUrls: ['./myeditor.component.css']
 })
 export class MyeditorComponent implements OnInit, AfterViewInit {
+  @Input()
+  numeroEtudiant: string;
+
+  @Input()
+  isEnseignant: boolean;
+
+  topEtudiant: string ;
+
   @ViewChild('editor') editorRef: ElementRef;
   username = 'User-' + Math.round(Math.random() * 10000);
   editor: any;
