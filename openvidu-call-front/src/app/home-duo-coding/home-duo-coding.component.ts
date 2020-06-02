@@ -25,7 +25,6 @@ export class HomeDuoCodingComponent implements OnInit, AfterViewInit {
   public topEtudiant: any = [];
   currentDomain: any;
   currentTpId: any;
-  currentModelId: any;
   currentUrl = '';
 
   listeEnseignants = [
@@ -73,7 +72,7 @@ export class HomeDuoCodingComponent implements OnInit, AfterViewInit {
 		this.userConnectedId = this.listeEnseignants[0].id;
 	} else {
 
-		//   this.idEtudiantSelect = this.route.snapshot.params.id;
+		   // this.idEtudiantSelect = this.route.snapshot.params.idEtudiant;
 
 		//   this.listeEtudiants.forEach(function (value) {
 		//     if (this.idEtudiantSelect == value.id) {
@@ -86,25 +85,28 @@ export class HomeDuoCodingComponent implements OnInit, AfterViewInit {
 		this.isEnseignant = false;
 		// this.topEtudiant = this.listeEtudiants[0];
 		randomName = this.idEtudiantSelect + '-' + this.listeEnseignants[0].id;
-		this.userConnectedId = this.idEtudiantSelect;
+		this.userConnectedId = this.route.snapshot.params.id;
 
 	}
-	Convergence.connectAnonymously(environment.CONVERGENCE_URL, this.userConnectedId)
-		.then((domain) => {
-		this.currentDomain = domain;
-		console.log('Connection success');
-		})
-		.catch((error) => {
-		console.log('Connection failure', error);
-		});
-
 
 	// const randomName = "18083197-31097626";
 	// const randomName = uniqueNamesGenerator({ dictionaries: [adjectives, colors, animals], separator: '-', });
 	this.roomForm = new FormControl(randomName, [Validators.minLength(4), Validators.required]);
   }
 
-  ngAfterViewInit() {
+  ngAfterViewInit(): void {
+	Convergence.connectAnonymously(environment.CONVERGENCE_URL, this.userConnectedId)
+		.then((domain) => {
+		this.currentDomain = domain;
+		if (!this.isEnseignant) {
+		console.log(this.currentDomain);
+		this.myEditorComponent.reloadViewContent(this.currentDomain, this.currentTpId + '_' + this.userConnectedId);
+		}
+		console.log('Connection success');
+		})
+		.catch((error) => {
+		console.log('Connection failure', error);
+		});
   }
 
   clickOnStudent(etudiant: any) {
@@ -112,8 +114,7 @@ export class HomeDuoCodingComponent implements OnInit, AfterViewInit {
 	const randomName = etudiant.id + '-' + this.listeEnseignants[0].id;
 	this.roomForm = new FormControl(randomName, [Validators.minLength(4), Validators.required]);
 
-	this.currentModelId = this.currentTpId + '_' + etudiant.id;
-	this.myEditorComponent.reloadViewContent(this.currentDomain, this.currentModelId);
+	this.myEditorComponent.reloadViewContent(this.currentDomain, this.currentTpId + '_' + etudiant.id);
   }
 
   public goToVideoCall() {
