@@ -120,11 +120,12 @@ export class HomeDuoCodingComponent implements OnInit, AfterViewInit {
   }
 
   public goToVideoCall() {
-	if (this.roomForm.valid) {
-		const roomName = this.roomForm.value.replace(/ /g, '-'); // replace white spaces by -
-		this.roomForm.setValue(roomName);
-		this.router.navigate(['/', roomName]);
-	}
+    if (this.roomForm.valid) {
+      const roomName = this.roomForm.value.replace(/ /g, '-'); // replace white spaces by -
+      this.roomForm.setValue(roomName);
+      window.open('#/'+roomName); 
+      // this.router.navigate(['/', roomName]);
+    }
   }
 
 }
