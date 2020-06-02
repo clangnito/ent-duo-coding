@@ -46,6 +46,7 @@ export class TpCreationComponent implements OnInit {
 			})
 			.catch((error) => console.log('Could not open the model', error));
 		}
+		alert('Le tp a bien été créé');
 		});
 
 
