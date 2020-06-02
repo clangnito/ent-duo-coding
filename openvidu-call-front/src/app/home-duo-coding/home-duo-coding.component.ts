@@ -20,8 +20,9 @@ export class HomeDuoCodingComponent implements OnInit, AfterViewInit {
   public isEnseignant = true;
   public idEtudiantOrProfSelect;
   public idEtudiantSelect;
-  public nameEtudiantSelect;
+  public nameEtudiantSelect: any;
   public userConnectedId: any;
+  public userConnectedName: any;
   public topEtudiant: any = [];
   currentDomain: any;
   currentTpId: any;
@@ -60,7 +61,7 @@ export class HomeDuoCodingComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
 	let randomName;
-	const nom = '';
+	let nom: any;
 
 	const re = /enseignant/gi;
 	const re2 = /etudiant/;
@@ -70,20 +71,21 @@ export class HomeDuoCodingComponent implements OnInit, AfterViewInit {
 		this.nameEtudiantSelect = this.topEtudiant.name;
 		randomName = this.topEtudiant.id + '-' + this.listeEnseignants[0].id;
 		this.userConnectedId = this.listeEnseignants[0].id;
+	this.userConnectedName = this.listeEnseignants[0].name;
 	} else {
 
-		   // this.idEtudiantSelect = this.route.snapshot.params.idEtudiant;
+	  this.idEtudiantSelect = this.route.snapshot.params.id;
+	for (let i = 0; i < this.listeEtudiants.length; i++) {
+		if (this.idEtudiantSelect == this.listeEtudiants[i].id) {
+		nom = this.listeEtudiants[i].name;
+		}
+	}
 
-		//   this.listeEtudiants.forEach(function (value) {
-		//     if (this.idEtudiantSelect == value.id) {
-		//      nom = value.name;
-		//     }
-
-		//  });
-		//  this.nameEtudiantSelect = nom;
+	this.nameEtudiantSelect = nom;
+	this.userConnectedName = nom;
 
 		this.isEnseignant = false;
-		// this.topEtudiant = this.listeEtudiants[0];
+		this.topEtudiant = this.listeEtudiants[0];
 		randomName = this.idEtudiantSelect + '-' + this.listeEnseignants[0].id;
 		this.userConnectedId = this.route.snapshot.params.id;
 
@@ -95,7 +97,7 @@ export class HomeDuoCodingComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-	Convergence.connectAnonymously(environment.CONVERGENCE_URL, this.userConnectedId)
+	Convergence.connectAnonymously(environment.CONVERGENCE_URL, this.userConnectedName)
 		.then((domain) => {
 		this.currentDomain = domain;
 		if (!this.isEnseignant) {
