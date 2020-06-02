@@ -24,6 +24,7 @@ import { createCustomElement } from '@angular/elements';
 import { ElementZoneStrategyFactory } from 'elements-zone-strategy';
 import { NgxLinkifyjsModule } from 'ngx-linkifyjs';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 // Pipes
 import { LinkifyPipe } from './shared/pipes/linkfy';
@@ -69,6 +70,7 @@ import { HomeChoiseProfileComponent } from './home-choise-profile/home-choise-pr
 import { HomeDuoCodingStudentComponent } from './home-duo-coding-student/home-duo-coding-student.component';
 import { MyeditorComponent } from './myeditor/myeditor.component';
 import { GetdataService } from './getdata.service';
+import { TpCreationComponent } from './tp-creation/tp-creation.component';
 
 @NgModule({
 	declarations: [
@@ -98,9 +100,11 @@ import { GetdataService } from './getdata.service';
 		HomeEnterRoomComponent,
 		HomeChoiseProfileComponent,
 		HomeDuoCodingStudentComponent,
-		MyeditorComponent
+		MyeditorComponent,
+		TpCreationComponent
 	],
 	imports: [
+    NgSelectModule,
 		FormsModule,
 		ReactiveFormsModule,
 		BrowserModule,

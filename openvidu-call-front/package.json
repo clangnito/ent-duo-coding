@@ -13,8 +13,9 @@
         "@angular/platform-browser-dynamic": "9.1.4",
         "@angular/router": "9.1.4",
         "@convergence/color-assigner": "^0.3.0",
-        "@convergence/convergence": "^1.0.0-rc.5",
+        "@convergence/convergence": "^1.0.0-rc.6",
         "@convergencelabs/monaco-collab-ext": "^0.3.0",
+        "@ng-select/ng-select": "^4.0.0",
         "core-js": "3.1.4",
         "jquery": "3.5.0",
         "monaco-editor": "^0.20.0",
@@ -25,7 +26,7 @@
         "zone.js": "0.10.3"
     },
     "devDependencies": {
-        "@angular-devkit/build-angular": "0.901.4",
+        "@angular-devkit/build-angular": "^0.901.7",
         "@angular-devkit/build-ng-packagr": "0.901.4",
         "@angular/cli": "9.1.4",
         "@angular/compiler-cli": "9.1.4",

@@ -41,6 +41,16 @@
           </a>
         </li>
       </div>
+
+
+      <hr class="sidebar-divider my-0">
+
+      <!-- Nav Item - Dashboard -->
+      <li class="nav-item active">
+        <a class="nav-link" href="/#/home-coding/tp-creation/">
+          <i class="fas fa-file-code"></i>
+          <span> Creer un TP </span></a>
+      </li>
     </div>
 
 
@@ -297,7 +307,7 @@
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">
-                  <!-- <app-myeditor></app-myeditor> -->
+                  <app-myeditor [numeroEtudiant]="idEtudiantOrProfSelect" [isEnseignant]="isEnseignant" #myeditorComponent></app-myeditor>
                   <div class="chart-area">
                     <canvas id="myAreaChart"></canvas>
                   </div>
